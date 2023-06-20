@@ -1,0 +1,528 @@
+*{
+   font-family: 'Rubik', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition:all .2s linear;
+}
+
+
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   background-color: white;
+}
+
+section{
+   padding:3rem 2rem;
+}
+
+.title{
+   text-align: center;
+   margin-bottom: 2rem;
+   text-transform: uppercase;
+   color:black;
+   font-size: 4rem;
+}
+
+.empty{
+   padding:1.5rem;
+   text-align: center;
+   border:solid;
+   background-color: white;
+   color:red;
+   font-size: 2rem;
+}
+
+.message{
+   position: sticky;
+   top:0;
+   margin:0 auto;
+   max-width: 1200px;
+   background-color: white;
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 10000;
+   gap:1.5rem;
+}
+
+.message span{
+   font-size: 2rem;
+   color:black;
+}
+
+.message i{
+   cursor: pointer;
+   color:red;
+   font-size: 2.5rem;
+}
+
+.message i:hover{
+   transform: rotate(90deg);
+}
+
+.btn,
+.option-btn,
+.delete-btn,
+.white-btn{
+   display: inline-block;
+   margin-top: 1rem;
+   padding:1rem 3rem;
+   cursor: pointer;
+   color:white;
+   font-size: 1.8rem;
+   border-radius: .5rem;
+   text-transform: capitalize;
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover{
+   background-color:black;
+}
+
+.white-btn,
+.btn{
+   background-color: rgb(6, 24, 128);
+}
+
+.option-btn{
+   background-color: rgb(185, 124, 10);
+}
+
+.delete-btn{
+   background-color: rgb(203, 10, 10);
+}
+
+.white-btn:hover{
+   background-color: white;
+   color:black;
+}
+
+@keyframes fadeIn {
+   0%{
+      transform: translateY(1rem);
+      opacity: .2s;
+   }
+}
+
+.header{
+   position: sticky;
+   top:0; left:0; right:0;
+   z-index: 1000;
+   background-color: white;
+   box-shadow: 0 .5rem 1rem rgb(120, 117, 117);
+}
+
+.header .flex{
+   display: flex;
+   align-items: center;
+   padding:2rem;
+   justify-content: space-between;
+   position: relative;
+   max-width: 1200px;
+   margin:0 auto;
+}
+ 
+.header .flex .logo{
+   font-size: 2.5rem;
+   color:black;
+}
+
+.header .flex .logo span{
+   color:rgb(6, 12, 117);
+}
+
+.header .flex .navbar a{
+   margin:0 1rem;
+   font-size: 2rem;
+   color:black;
+}
+
+.header .flex .navbar a:hover{
+   color:rgb(12, 12, 158);
+}
+
+.header .flex .icons div{
+   margin-left: 1.5rem;
+   font-size: 2.5rem;
+   cursor: pointer;
+   color:black;
+}
+
+.header .flex .icons div:hover{
+   color:rgb(17, 17, 153);
+}
+
+.header .flex .account-box{
+   position: absolute;
+   top:120%; right:2rem;
+   width: 30rem;
+   box-shadow: 0 .5rem 1rem black;
+   border-radius: .5rem;
+   padding:2rem;
+   text-align: center;
+   border-radius: .5rem;
+   border:1rem solid black;
+   background-color: white;
+   display: none;
+   animation:fadeIn .2s linear;
+}
+
+.header .flex .account-box.active{
+   display: inline-block;
+}
+
+.header .flex .account-box p{
+   font-size: 2rem;
+   color:rgb(201, 201, 201);
+   margin-bottom: 1.5rem;
+}
+
+.header .flex .account-box p span{
+   color:rgb(14, 14, 155);
+}
+
+.header .flex .account-box .delete-btn{
+   margin-top: 0;
+}
+
+.header .flex .account-box div{
+   margin-top: 1.5rem;
+   font-size: 2rem;
+   color:rgb(166, 164, 164);
+}
+
+.header .flex .account-box div a{
+   color:orange;
+}
+
+.header .flex .account-box div a:hover{
+   text-decoration: underline;
+}
+
+#menu-btn{
+   display: none;
+}
+
+.dashboard .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap:1.5rem;
+   max-width: 1200px;
+   margin:0 auto;
+   align-items: flex-start;
+}
+
+.dashboard .box-container .box{
+   border-radius: .5rem;
+   padding:2rem;
+   background-color: white;
+   box-shadow: 0 .3rem 1rem rgb(188, 186, 186);
+   border:0.1rem solid rgb(0, 0, 0);
+   text-align: center;
+}
+
+.dashboard .box-container .box h3{
+   font-size: 5rem;
+   color:black; 
+}
+
+.dashboard .box-container .box p{
+   margin-top: 1.5rem;
+   padding:1.5rem;
+   background-color: rgb(224, 224, 224);
+   color:rgb(12, 12, 136);
+   font-size: 2rem;
+   border-radius: .5rem;
+   border:0.1rem solid rgb(0, 0, 0);
+}
+
+.add-books form{
+   background-color: white;
+   border-radius: .5rem;
+   padding:2rem;
+   text-align: center;
+   box-shadow: 0 .5rem 1rem rgb(149, 147, 147);
+   border:0.1rem solid black;
+   max-width: 50rem;
+   margin:0 auto;
+}
+
+.add-books form h3{
+   font-size: 2.5rem;
+   text-transform: uppercase;
+   color:black;
+   margin-bottom: 1.5rem;
+}
+
+.add-books form .box{
+   width: 100%;
+   background-color: rgb(202, 202, 202);
+   border-radius: .5rem;
+   margin:1rem 0;
+   padding:1.2rem 1.4rem;
+   color:black;
+   font-size: 1.8rem;
+   border:.1rem solid black;
+}
+
+.show-books .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   justify-content: center;
+   gap:1.5rem;
+   max-width: 1200px;
+   margin:0 auto;
+   align-items: flex-start;
+}
+
+.show-books{
+   padding-top: 0;
+}
+
+.show-books .box-container .box{
+   text-align: center;
+   padding:2rem;
+   border-radius: .5rem;
+   border:.1rem solid black;
+   box-shadow: 0 .5rem 1rem black;
+   background-color: white;
+}
+
+.show-books .box-container .box img{
+   height: 30rem;
+}
+
+.show-books .box-container .box .name{
+   padding:1rem 0;
+   font-size: 2rem;
+   color:black;
+}
+
+.show-books .box-container .box .category{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:red;
+}
+
+.edit-books-form{
+   min-height: 100vh;
+   background-color: rgba(0,0,0,.7);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:2rem;
+   overflow-y: scroll;
+   position: fixed;
+   top:0; left:0; 
+   z-index: 1200;
+   width: 100%;
+}
+
+.edit-books-form form{
+   width: 50rem;
+   padding:2rem;
+   text-align: center;
+   border-radius: .5rem;
+   background-color: white;
+}
+
+.edit-books-form form img{
+   height: 25rem;
+   margin-bottom: 1rem;
+}
+
+.edit-books-form form .box{
+   margin:1rem 0;
+   padding:1.2rem 1.4rem;
+   border:var(--border);
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   font-size: 1.8rem;
+   color:black;
+   width: 100%;
+}
+
+.orders .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   justify-content: center;
+   gap:1.5rem;
+   max-width: 1200px;
+   margin:0 auto;
+   align-items: flex-start;
+}
+
+.orders .box-container .box{
+   background-color: white;
+   padding:2rem;
+   border:.1rem solid black;
+   box-shadow:0 .5rem 1rem black;
+   border-radius: .5rem;
+}
+
+.orders .box-container .box p{
+   padding-bottom: 1rem;
+   font-size: 2rem;
+   color:rgb(92, 92, 92);
+}
+
+.orders .box-container .box p span{
+   color:rgb(5, 5, 170);
+}
+
+.orders .box-container .box form{
+   text-align: center;
+}
+
+.orders .box-container .box form select{
+   border-radius: .5rem;
+   margin:.5rem 0;
+   width: 100%;
+   background-color: rgb(177, 177, 177);
+   border:0.1rem solid black;
+   padding:1.2rem 1.4rem;
+   font-size: 1.8rem;
+   color:black;
+}
+
+.users .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   justify-content: center;
+   gap:1.5rem;
+   max-width: 1200px;
+   margin:0 auto;
+   align-items: flex-start;
+}
+
+.users .box-container .box{
+   background-color: white;
+   padding:2rem;
+   border: 0.1rem solid black;
+   box-shadow:0 .5rem 1rem black;
+   border-radius: .5rem;
+   text-align: center;
+}
+
+.users .box-container .box p{
+   padding-bottom: 1.5rem;
+   font-size: 2rem;
+   color:rgb(99, 95, 95);
+}
+
+.users .box-container .box p span{
+   color:rgb(10, 10, 127);
+}
+
+.users .box-container .box .delete-btn{
+   margin-top: 0;
+}
+
+.messages .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 35rem);
+   justify-content: center;
+   gap:1.5rem;
+   max-width: 1200px;
+   margin:0 auto;
+   align-items: flex-start;
+}
+
+.messages .box-container .box{
+   background-color: white;
+   padding:2rem;
+   border:0.1rem solid black;
+   box-shadow: o .5rem 1rem black;
+   border-radius: .5rem;
+}
+
+.messages .box-container .box p{
+   padding-bottom: 1.5rem;
+   font-size: 2rem;
+   color:rgb(93, 91, 91);
+   line-height: 1.5;
+}
+
+.messages .box-container .box p span{
+   color:rgb(12, 12, 128);
+}
+
+.messages .box-container .box .delete-btn{
+   margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   #menu-btn{
+      display: inline-block;
+   }
+
+   .header .flex .navbar{
+      position: absolute;
+      top:99%; left:0; right:0;
+      background-color: white;
+      border-top:1rem solid black;
+      border-bottom: 1rem solid black;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+
+   .header .flex .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   .header .flex .navbar a{
+      margin:2rem;
+      display: block;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+   .title{
+      font-size: 3rem;
+   }
+
+}
